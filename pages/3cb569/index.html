@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>git学习笔记 | 程序员阿嘴的代码世界</title>
+    <meta name="generator" content="VuePress 1.9.5">
+    <link rel="icon" href="/img/favicon.ico">
+    <meta name="description" content="web前端技术博客,专注web前端学习与总结。JavaScript,js,ES6,TypeScript,vue,React,python,css3,html5,Node,git,github等技术文章。">
+    <meta name="keywords" content="前端博客,个人技术博客,前端,前端开发,前端框架,web前端,前端面试题,技术文档,学习,面试,JavaScript,js,ES6,TypeScript,vue,python,css3,html5,Node,git,github,markdown">
+    <meta name="baidu-site-verification" content="7F55weZDDc">
+    <meta name="theme-color" content="#11a8cd">
+    
+    <link rel="preload" href="/assets/css/0.styles.300445c5.css" as="style"><link rel="preload" href="/assets/js/app.9caca965.js" as="script"><link rel="preload" href="/assets/js/2.6af90872.js" as="script"><link rel="preload" href="/assets/js/146.4c8bf4f7.js" as="script"><link rel="prefetch" href="/assets/js/10.caa93396.js"><link rel="prefetch" href="/assets/js/100.8ec79e07.js"><link rel="prefetch" href="/assets/js/101.08461152.js"><link rel="prefetch" href="/assets/js/102.6d1d547a.js"><link rel="prefetch" href="/assets/js/103.75405f7c.js"><link rel="prefetch" href="/assets/js/104.918f83c7.js"><link rel="prefetch" href="/assets/js/105.4137b380.js"><link rel="prefetch" href="/assets/js/106.cf29057a.js"><link rel="prefetch" href="/assets/js/107.4f4818f1.js"><link rel="prefetch" href="/assets/js/108.eef40895.js"><link rel="prefetch" href="/assets/js/109.3aad5bb0.js"><link rel="prefetch" href="/assets/js/11.10de7c78.js"><link rel="prefetch" href="/assets/js/110.5f8f959c.js"><link rel="prefetch" href="/assets/js/111.3a17d51d.js"><link rel="prefetch" href="/assets/js/112.912b990d.js"><link rel="prefetch" href="/assets/js/113.9fbbb419.js"><link rel="prefetch" href="/assets/js/114.39a3e4b8.js"><link rel="prefetch" href="/assets/js/115.f2e8f0e3.js"><link rel="prefetch" href="/assets/js/116.9aa6e995.js"><link rel="prefetch" href="/assets/js/117.df9ea373.js"><link rel="prefetch" href="/assets/js/118.25325804.js"><link rel="prefetch" href="/assets/js/119.75644a99.js"><link rel="prefetch" href="/assets/js/12.0083cffb.js"><link rel="prefetch" href="/assets/js/120.f9980251.js"><link rel="prefetch" href="/assets/js/121.5af29b1c.js"><link rel="prefetch" href="/assets/js/122.737a786a.js"><link rel="prefetch" href="/assets/js/123.b2df68b0.js"><link rel="prefetch" href="/assets/js/124.53153df3.js"><link rel="prefetch" href="/assets/js/125.e698120d.js"><link rel="prefetch" href="/assets/js/126.3b1eb076.js"><link rel="prefetch" href="/assets/js/127.1ad46ab3.js"><link rel="prefetch" href="/assets/js/128.a4c4e05f.js"><link rel="prefetch" href="/assets/js/129.f18d71d2.js"><link rel="prefetch" href="/assets/js/13.3ac60e2a.js"><link rel="prefetch" href="/assets/js/130.97988116.js"><link rel="prefetch" href="/assets/js/131.050180d2.js"><link rel="prefetch" href="/assets/js/132.19ee341c.js"><link rel="prefetch" href="/assets/js/133.19a74289.js"><link rel="prefetch" href="/assets/js/134.e8082a65.js"><link rel="prefetch" href="/assets/js/135.0b851a6a.js"><link rel="prefetch" href="/assets/js/136.0f79a6be.js"><link rel="prefetch" href="/assets/js/137.bf5aa417.js"><link rel="prefetch" href="/assets/js/138.bd1da84c.js"><link rel="prefetch" href="/assets/js/139.da0cdaac.js"><link rel="prefetch" href="/assets/js/14.b8cfcddf.js"><link rel="prefetch" href="/assets/js/140.0d314d50.js"><link rel="prefetch" href="/assets/js/141.bffb7535.js"><link rel="prefetch" href="/assets/js/142.db6db7ac.js"><link rel="prefetch" href="/assets/js/143.f715fc78.js"><link rel="prefetch" href="/assets/js/144.770dcdeb.js"><link rel="prefetch" href="/assets/js/145.6d94bd6d.js"><link rel="prefetch" href="/assets/js/147.5d17a628.js"><link rel="prefetch" href="/assets/js/148.41d3c74a.js"><link rel="prefetch" href="/assets/js/149.11dfe0fe.js"><link rel="prefetch" href="/assets/js/15.e53c31a8.js"><link rel="prefetch" href="/assets/js/150.d7c159d4.js"><link rel="prefetch" href="/assets/js/151.0c72e40b.js"><link rel="prefetch" href="/assets/js/152.c4f9faad.js"><link rel="prefetch" href="/assets/js/153.8b77695d.js"><link rel="prefetch" href="/assets/js/154.1cabf9df.js"><link rel="prefetch" href="/assets/js/155.c624545c.js"><link rel="prefetch" href="/assets/js/156.3d63df30.js"><link rel="prefetch" href="/assets/js/157.d6bf449b.js"><link rel="prefetch" href="/assets/js/158.e2d0411c.js"><link rel="prefetch" href="/assets/js/159.d2fed530.js"><link rel="prefetch" href="/assets/js/16.3abea907.js"><link rel="prefetch" href="/assets/js/160.3c7fb12d.js"><link rel="prefetch" href="/assets/js/161.ab71d7ad.js"><link rel="prefetch" href="/assets/js/162.7d21cba7.js"><link rel="prefetch" href="/assets/js/163.cf57fc52.js"><link rel="prefetch" href="/assets/js/164.65bda27b.js"><link rel="prefetch" href="/assets/js/165.b6eec59d.js"><link rel="prefetch" href="/assets/js/166.c01537a3.js"><link rel="prefetch" href="/assets/js/167.61cb0921.js"><link rel="prefetch" href="/assets/js/168.f39adf6d.js"><link rel="prefetch" href="/assets/js/169.c4b83255.js"><link rel="prefetch" href="/assets/js/17.2dec0b47.js"><link rel="prefetch" href="/assets/js/170.9fb11140.js"><link rel="prefetch" href="/assets/js/171.c936d4a6.js"><link rel="prefetch" href="/assets/js/172.83794c05.js"><link rel="prefetch" href="/assets/js/173.e98dc001.js"><link rel="prefetch" href="/assets/js/174.4bcb68af.js"><link rel="prefetch" href="/assets/js/175.1217f2ba.js"><link rel="prefetch" href="/assets/js/176.64fb91a6.js"><link rel="prefetch" href="/assets/js/177.dcc83f00.js"><link rel="prefetch" href="/assets/js/178.5f95dae3.js"><link rel="prefetch" href="/assets/js/179.f2935cfa.js"><link rel="prefetch" href="/assets/js/18.f4d41ecc.js"><link rel="prefetch" href="/assets/js/180.014f5c4c.js"><link rel="prefetch" href="/assets/js/181.0a1ec0da.js"><link rel="prefetch" href="/assets/js/182.6a0ca314.js"><link rel="prefetch" href="/assets/js/183.61dc6c1c.js"><link rel="prefetch" href="/assets/js/184.3e20eda2.js"><link rel="prefetch" href="/assets/js/185.7a2db022.js"><link rel="prefetch" href="/assets/js/186.11e9a6ef.js"><link rel="prefetch" href="/assets/js/187.3b7891d3.js"><link rel="prefetch" href="/assets/js/188.54da6215.js"><link rel="prefetch" href="/assets/js/189.06546bb2.js"><link rel="prefetch" href="/assets/js/19.a9c4bb7f.js"><link rel="prefetch" href="/assets/js/190.93171c85.js"><link rel="prefetch" href="/assets/js/191.476b80d8.js"><link rel="prefetch" href="/assets/js/192.11ca4528.js"><link rel="prefetch" href="/assets/js/193.041ceab1.js"><link rel="prefetch" href="/assets/js/194.43cdf498.js"><link rel="prefetch" href="/assets/js/195.5368b665.js"><link rel="prefetch" href="/assets/js/196.aee40ba3.js"><link rel="prefetch" href="/assets/js/197.f4fd25d7.js"><link rel="prefetch" href="/assets/js/20.62bd82b8.js"><link rel="prefetch" href="/assets/js/21.a2ec33d9.js"><link rel="prefetch" href="/assets/js/22.8795aef2.js"><link rel="prefetch" href="/assets/js/23.4eee4cbf.js"><link rel="prefetch" href="/assets/js/24.cbb7683f.js"><link rel="prefetch" href="/assets/js/25.1022d1da.js"><link rel="prefetch" href="/assets/js/26.a1562eca.js"><link rel="prefetch" href="/assets/js/27.ed88b915.js"><link rel="prefetch" href="/assets/js/28.d84caa75.js"><link rel="prefetch" href="/assets/js/29.c3465f13.js"><link rel="prefetch" href="/assets/js/3.bb0c576e.js"><link rel="prefetch" href="/assets/js/30.5e2e8e78.js"><link rel="prefetch" href="/assets/js/31.e4b6395a.js"><link rel="prefetch" href="/assets/js/32.fdc04ab3.js"><link rel="prefetch" href="/assets/js/33.ed031fab.js"><link rel="prefetch" href="/assets/js/34.e4a882bc.js"><link rel="prefetch" href="/assets/js/35.a5f50428.js"><link rel="prefetch" href="/assets/js/36.66997618.js"><link rel="prefetch" href="/assets/js/37.305cb374.js"><link rel="prefetch" href="/assets/js/38.fb1c8fda.js"><link rel="prefetch" href="/assets/js/39.e8ca353f.js"><link rel="prefetch" href="/assets/js/4.17c080c8.js"><link rel="prefetch" href="/assets/js/40.68ad560d.js"><link rel="prefetch" href="/assets/js/41.f76a2bfb.js"><link rel="prefetch" href="/assets/js/42.e5e69df2.js"><link rel="prefetch" href="/assets/js/43.3ba6dfbf.js"><link rel="prefetch" href="/assets/js/44.4f6038ee.js"><link rel="prefetch" href="/assets/js/45.2ef96530.js"><link rel="prefetch" href="/assets/js/46.c47e6990.js"><link rel="prefetch" href="/assets/js/47.aa15fc8f.js"><link rel="prefetch" href="/assets/js/48.217b4123.js"><link rel="prefetch" href="/assets/js/49.09831303.js"><link rel="prefetch" href="/assets/js/5.270dddbd.js"><link rel="prefetch" href="/assets/js/50.b31129da.js"><link rel="prefetch" href="/assets/js/51.76e11b4f.js"><link rel="prefetch" href="/assets/js/52.4bca1ab2.js"><link rel="prefetch" href="/assets/js/53.75147dcb.js"><link rel="prefetch" href="/assets/js/54.11d8dd4b.js"><link rel="prefetch" href="/assets/js/55.58b60476.js"><link rel="prefetch" href="/assets/js/56.f659ba3f.js"><link rel="prefetch" href="/assets/js/57.eada42a7.js"><link rel="prefetch" href="/assets/js/58.f84222d3.js"><link rel="prefetch" href="/assets/js/59.bcd8135c.js"><link rel="prefetch" href="/assets/js/6.2c58a1e5.js"><link rel="prefetch" href="/assets/js/60.8f53b44a.js"><link rel="prefetch" href="/assets/js/61.359a5af9.js"><link rel="prefetch" href="/assets/js/62.d2270a02.js"><link rel="prefetch" href="/assets/js/63.6aff4f25.js"><link rel="prefetch" href="/assets/js/64.ba7d0999.js"><link rel="prefetch" href="/assets/js/65.32a3b9e9.js"><link rel="prefetch" href="/assets/js/66.ed14de79.js"><link rel="prefetch" href="/assets/js/67.830769a7.js"><link rel="prefetch" href="/assets/js/68.4a6c5fdf.js"><link rel="prefetch" href="/assets/js/69.e878b03d.js"><link rel="prefetch" href="/assets/js/7.99da7301.js"><link rel="prefetch" href="/assets/js/70.54f8156b.js"><link rel="prefetch" href="/assets/js/71.0f6445eb.js"><link rel="prefetch" href="/assets/js/72.6cf1d635.js"><link rel="prefetch" href="/assets/js/73.ebb07565.js"><link rel="prefetch" href="/assets/js/74.d29dc2d5.js"><link rel="prefetch" href="/assets/js/75.10a75e84.js"><link rel="prefetch" href="/assets/js/76.f87ac10b.js"><link rel="prefetch" href="/assets/js/77.31b82f4b.js"><link rel="prefetch" href="/assets/js/78.9507bd0c.js"><link rel="prefetch" href="/assets/js/79.080740e1.js"><link rel="prefetch" href="/assets/js/8.2ceb44fa.js"><link rel="prefetch" href="/assets/js/80.f435b09d.js"><link rel="prefetch" href="/assets/js/81.17b20e0e.js"><link rel="prefetch" href="/assets/js/82.d8525160.js"><link rel="prefetch" href="/assets/js/83.feeac4cd.js"><link rel="prefetch" href="/assets/js/84.8bf36401.js"><link rel="prefetch" href="/assets/js/85.4e4e90a2.js"><link rel="prefetch" href="/assets/js/86.723d6f07.js"><link rel="prefetch" href="/assets/js/87.9fa8bd3c.js"><link rel="prefetch" href="/assets/js/88.71145d1a.js"><link rel="prefetch" href="/assets/js/89.937a3a12.js"><link rel="prefetch" href="/assets/js/9.cfe9bf1c.js"><link rel="prefetch" href="/assets/js/90.d8f95960.js"><link rel="prefetch" href="/assets/js/91.5bc507cd.js"><link rel="prefetch" href="/assets/js/92.07ba66a1.js"><link rel="prefetch" href="/assets/js/93.7722916a.js"><link rel="prefetch" href="/assets/js/94.e31f4b79.js"><link rel="prefetch" href="/assets/js/95.c599a769.js"><link rel="prefetch" href="/assets/js/96.5bca34ab.js"><link rel="prefetch" href="/assets/js/97.d8130280.js"><link rel="prefetch" href="/assets/js/98.ce3046bb.js"><link rel="prefetch" href="/assets/js/99.99cf1eea.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.300445c5.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/img/logo.png" alt="程序员阿嘴的代码世界" class="logo"> <span class="site-name can-hide">程序员阿嘴的代码世界</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大前端" class="dropdown-title"><a href="/web/" class="link-title">大前端</a> <span class="title" style="display:none;">大前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>前端文章</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/8143cc480faf9a11/" class="nav-link">JavaScript</a></li></ul></li><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/javascript/" class="nav-link">《JavaScript教程》</a></li><li class="dropdown-subitem"><a href="/note/js/" class="nav-link">《JavaScript高级程序设计》</a></li><li class="dropdown-subitem"><a href="/note/es6/" class="nav-link">《ES6 教程》</a></li><li class="dropdown-subitem"><a href="/note/vue/" class="nav-link">《Vue》</a></li><li class="dropdown-subitem"><a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-subitem"><a href="/note/git/" class="nav-link">《Git》</a></li><li class="dropdown-subitem"><a href="/pages/51afd6/" class="nav-link">TypeScript</a></li><li class="dropdown-subitem"><a href="/pages/4643cd/" class="nav-link">JS设计模式总结</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="页面" class="dropdown-title"><a href="/ui/" class="link-title">页面</a> <span class="title" style="display:none;">页面</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/8309a5b876fc95e3/" class="nav-link">HTML</a></li><li class="dropdown-item"><!----> <a href="/pages/0a83b083bdf257cb/" class="nav-link">CSS</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><a href="/technology/" class="link-title">技术</a> <span class="title" style="display:none;">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/9a7ee40fc232253e/" class="nav-link">技术文档</a></li><li class="dropdown-item"><!----> <a href="/pages/4c778760be26d8b3/" class="nav-link">GitHub技巧</a></li><li class="dropdown-item"><!----> <a href="/pages/f21a7c/" class="nav-link">手撕代码系列</a></li><li class="dropdown-item"><!----> <a href="/pages/72555c/" class="nav-link">项目</a></li><li class="dropdown-item"><!----> <a href="/pages/182903/" class="nav-link">业务</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/f2a556/" class="nav-link">学习</a></li><li class="dropdown-item"><!----> <a href="/pages/aea6571b7a8bae86/" class="nav-link">面试</a></li><li class="dropdown-item"><!----> <a href="/pages/dcebaf/" class="nav-link">实用技巧</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="我的主页" class="dropdown-title"><!----> <span class="title" style="display:;">我的主页</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/356673864599246" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/aniudunaichiji?spm=1000.2115.3001.5343" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/division-222" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <a href="https://github.com/peacelovea" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><div class="blogger"><img src="https://c1.hoopchina.com.cn/uploads/star/event/images/140627/a520f89e3eb37ad22eb5b877ffe9feacd3675c9f.jpg"> <div class="blogger-info"><h3>程序员阿嘴</h3> <span>前端界的小学生</span></div></div> <nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">首页</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="大前端" class="dropdown-title"><a href="/web/" class="link-title">大前端</a> <span class="title" style="display:none;">大前端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>前端文章</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/pages/8143cc480faf9a11/" class="nav-link">JavaScript</a></li></ul></li><li class="dropdown-item"><h4>学习笔记</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="/note/javascript/" class="nav-link">《JavaScript教程》</a></li><li class="dropdown-subitem"><a href="/note/js/" class="nav-link">《JavaScript高级程序设计》</a></li><li class="dropdown-subitem"><a href="/note/es6/" class="nav-link">《ES6 教程》</a></li><li class="dropdown-subitem"><a href="/note/vue/" class="nav-link">《Vue》</a></li><li class="dropdown-subitem"><a href="/note/react/" class="nav-link">《React》</a></li><li class="dropdown-subitem"><a href="/note/git/" class="nav-link">《Git》</a></li><li class="dropdown-subitem"><a href="/pages/51afd6/" class="nav-link">TypeScript</a></li><li class="dropdown-subitem"><a href="/pages/4643cd/" class="nav-link">JS设计模式总结</a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="页面" class="dropdown-title"><a href="/ui/" class="link-title">页面</a> <span class="title" style="display:none;">页面</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/8309a5b876fc95e3/" class="nav-link">HTML</a></li><li class="dropdown-item"><!----> <a href="/pages/0a83b083bdf257cb/" class="nav-link">CSS</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="技术" class="dropdown-title"><a href="/technology/" class="link-title">技术</a> <span class="title" style="display:none;">技术</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/9a7ee40fc232253e/" class="nav-link">技术文档</a></li><li class="dropdown-item"><!----> <a href="/pages/4c778760be26d8b3/" class="nav-link">GitHub技巧</a></li><li class="dropdown-item"><!----> <a href="/pages/f21a7c/" class="nav-link">手撕代码系列</a></li><li class="dropdown-item"><!----> <a href="/pages/72555c/" class="nav-link">项目</a></li><li class="dropdown-item"><!----> <a href="/pages/182903/" class="nav-link">业务</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="更多" class="dropdown-title"><a href="/more/" class="link-title">更多</a> <span class="title" style="display:none;">更多</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pages/f2a556/" class="nav-link">学习</a></li><li class="dropdown-item"><!----> <a href="/pages/aea6571b7a8bae86/" class="nav-link">面试</a></li><li class="dropdown-item"><!----> <a href="/pages/dcebaf/" class="nav-link">实用技巧</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="索引" class="dropdown-title"><a href="/archives/" class="link-title">索引</a> <span class="title" style="display:none;">索引</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/" class="nav-link">分类</a></li><li class="dropdown-item"><!----> <a href="/tags/" class="nav-link">标签</a></li><li class="dropdown-item"><!----> <a href="/archives/" class="nav-link">归档</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="我的主页" class="dropdown-title"><!----> <span class="title" style="display:;">我的主页</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/356673864599246" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://blog.csdn.net/aniudunaichiji?spm=1000.2115.3001.5343" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  CSDN
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://gitee.com/division-222" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Gitee
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <a href="https://github.com/peacelovea" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>手册</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading"><span>文档笔记</span> <span class="arrow right"></span></p> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><p class="sidebar-heading open"><span>学习笔记</span> <span class="arrow down"></span></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/3cb569/" aria-current="page" class="active sidebar-link">git学习笔记</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level2"><a href="/pages/3cb569/#_1-学习目标" class="sidebar-link">1.学习目标</a></li><li class="sidebar-sub-header level2"><a href="/pages/3cb569/#_2-git概述" class="sidebar-link">2.Git概述</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level4"><a href="/pages/3cb569/#_1-版本控制" class="sidebar-link">1.版本控制</a></li><li class="sidebar-sub-header level5"><a href="/pages/3cb569/#_1-为什么需要版本控制" class="sidebar-link">1.为什么需要版本控制？</a></li><li class="sidebar-sub-header level5"><a href="/pages/3cb569/#_2-版本控制工具" class="sidebar-link">2.版本控制工具</a></li><li class="sidebar-sub-header level6"><a href="/pages/3cb569/#集中式版本控制工具" class="sidebar-link">集中式版本控制工具</a></li><li class="sidebar-sub-header level6"><a href="/pages/3cb569/#分布式版本控制工具" class="sidebar-link">分布式版本控制工具</a></li><li class="sidebar-sub-header level4"><a href="/pages/3cb569/#_2-工作机制和代码托管中心" class="sidebar-link">2.工作机制和代码托管中心</a></li><li class="sidebar-sub-header level5"><a href="/pages/3cb569/#工作机制" class="sidebar-link">工作机制</a></li><li class="sidebar-sub-header level5"><a href="/pages/3cb569/#代码托管中心" class="sidebar-link">代码托管中心</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/3cb569/#_3-git安装" class="sidebar-link">3.Git安装</a></li><li class="sidebar-sub-header level2"><a href="/pages/3cb569/#_4-git常用命令" class="sidebar-link">4.Git常用命令</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_01-设置用户签名" class="sidebar-link">01.设置用户签名</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_02-初始化本地库-git-init" class="sidebar-link">02.初始化本地库：git init</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_03-查看本地库状态-git-status" class="sidebar-link">03.查看本地库状态：git status</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_04-添加暂存区-git-add-文件名" class="sidebar-link">04.添加暂存区：git add 文件名</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_05-提交本地库-git-commit-m-日志信息-文件名" class="sidebar-link">05.提交本地库：git commit -m &quot;日志信息&quot; 文件名</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_06-修改文件" class="sidebar-link">06.修改文件</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_07-版本穿梭-git-reset-hard-版本号" class="sidebar-link">07.版本穿梭：git reset --hard 版本号</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_08-分支" class="sidebar-link">08.分支</a></li><li class="sidebar-sub-header level4"><a href="/pages/3cb569/#分支操作命令" class="sidebar-link">分支操作命令</a></li><li class="sidebar-sub-header level5"><a href="/pages/3cb569/#_1-查看分支-git-branch-v" class="sidebar-link">1.查看分支：git branch -v</a></li><li class="sidebar-sub-header level5"><a href="/pages/3cb569/#_2-创建分支-git-branch-分支名" class="sidebar-link">2.创建分支:git branch 分支名</a></li><li class="sidebar-sub-header level5"><a href="/pages/3cb569/#_3-切换分支-git-checkout-分支名" class="sidebar-link">3.切换分支:git checkout 分支名</a></li><li class="sidebar-sub-header level5"><a href="/pages/3cb569/#_4-合并分支-正常合并-git-merge-分支名" class="sidebar-link">4.合并分支(正常合并):git merge 分支名</a></li><li class="sidebar-sub-header level5"><a href="/pages/3cb569/#_5-冲突合并" class="sidebar-link">5.冲突合并：</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/3cb569/#_5-git团队协作机制" class="sidebar-link">5.Git团队协作机制</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#团队内协作" class="sidebar-link">团队内协作</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#跨团队协作" class="sidebar-link">跨团队协作</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/3cb569/#_6-github操作" class="sidebar-link">6.GitHub操作</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_1-创建远程库别名" class="sidebar-link">1.创建远程库别名：</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_2-推送本地库到远程仓库" class="sidebar-link">2.推送本地库到远程仓库</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_3-远程库拉取到本地库" class="sidebar-link">3.远程库拉取到本地库</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_4-克隆远程库到本地" class="sidebar-link">4.克隆远程库到本地</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_5-github-团队内协作" class="sidebar-link">5.GitHub_团队内协作</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_6-github-跨团队协作" class="sidebar-link">6.GitHub_跨团队协作</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_7-github-ssh免密登录" class="sidebar-link">7.GitHub_SSH免密登录</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/3cb569/#_7-idea集成git" class="sidebar-link">7.IDEA集成Git</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_1-配置-git-忽略文件" class="sidebar-link">1.配置 Git 忽略文件</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_2-idea中定位git程序" class="sidebar-link">2.idea中定位Git程序</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_3-初始化git" class="sidebar-link">3.初始化Git</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_4-添加到暂存区" class="sidebar-link">4.添加到暂存区</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_5-提交本地库" class="sidebar-link">5.提交本地库</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_6-切换版本" class="sidebar-link">6.切换版本</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_7-创建分支" class="sidebar-link">7.创建分支</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_8-切换分支" class="sidebar-link">8.切换分支</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_9-合并分支-正常合并" class="sidebar-link">9.合并分支（正常合并）</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_10-合并分支-冲突合并" class="sidebar-link">10.合并分支(冲突合并)</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/3cb569/#idea集成github" class="sidebar-link">IDEA集成GitHub</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_1-设置github账号" class="sidebar-link">1.设置GitHub账号</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_2-分享项目到github" class="sidebar-link">2.分享项目到GitHub</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_3-push推送代码到远程库" class="sidebar-link">3.push推送代码到远程库</a></li><li class="sidebar-sub-header level4"><a href="/pages/3cb569/#https协议push" class="sidebar-link">https协议push</a></li><li class="sidebar-sub-header level4"><a href="/pages/3cb569/#ssh协议push" class="sidebar-link">ssh协议push</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_4-pull拉取远程库到本地库" class="sidebar-link">4.pull拉取远程库到本地库</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#_5-clone远程库代码到本地" class="sidebar-link">5.clone远程库代码到本地</a></li></ul></li><li class="sidebar-sub-header level2"><a href="/pages/3cb569/#gitee-码云" class="sidebar-link">Gitee(码云)</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#简介" class="sidebar-link">简介</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#账号注册登录" class="sidebar-link">账号注册登录</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#创建远程库" class="sidebar-link">创建远程库</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#idea集成gitee" class="sidebar-link">IDEA集成Gitee</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#push推送代码到远程库" class="sidebar-link">push推送代码到远程库</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#pull拉取代码到本地库" class="sidebar-link">pull拉取代码到本地库</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#clone远程库代码到本地库" class="sidebar-link">clone远程库代码到本地库</a></li><li class="sidebar-sub-header level3"><a href="/pages/3cb569/#码云复制github" class="sidebar-link">码云复制GitHub</a></li></ul></li></ul></li></ul></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-b23d050e><div class="articleInfo" data-v-b23d050e><ul class="breadcrumbs" data-v-b23d050e><li data-v-b23d050e><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-b23d050e></a></li> <li data-v-b23d050e><a href="/note/git/#《Git》学习笔记" data-v-b23d050e>《Git》学习笔记</a></li><li data-v-b23d050e><a href="/note/git/#学习笔记" data-v-b23d050e>学习笔记</a></li></ul> <div class="info" data-v-b23d050e><div title="作者" class="author iconfont icon-touxiang" data-v-b23d050e><a href="https://github.com/peacelovea" target="_blank" title="作者" class="beLink" data-v-b23d050e>程序员阿嘴</a></div> <div title="创建时间" class="date iconfont icon-riqi" data-v-b23d050e><a href="javascript:;" data-v-b23d050e>2022-07-31</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">git学习笔记<!----></h1>  <div class="theme-vdoing-content content__default"><h2 id="_1-学习目标"><a href="#_1-学习目标" class="header-anchor">#</a> 1.学习目标</h2> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318094536890.png" alt="image-20220318094536890"></p> <h2 id="_2-git概述"><a href="#_2-git概述" class="header-anchor">#</a> 2.Git概述</h2> <p>Git 是一个免费的、开源的分布式版本控制系统，可以快速高效地处理从小型到大型的各种项目。</p> <p>Git 易于学习，占地面积小，性能极快。 它具有廉价的本地库，方便的暂存区域和多个工作流分支等特性。 其性能优于 Subversion、 CVS、 Perforce 和 ClearCase 等版本控制工具。</p> <p>Git官网：<a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">Git (git-scm.com)<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h4 id="_1-版本控制"><a href="#_1-版本控制" class="header-anchor">#</a> 1.版本控制</h4> <p>版本控制是一种记录文件内容变化，以便将来查阅特定版本修订情况的系统。</p> <p>版本控制其实最重要的是可以记录文件修改历史记录，从而让用户能够查看历史版本，方便版本切换。</p> <p><img src="https://img-blog.csdnimg.cn/img_convert/2abc5f18d46afc2d50cee7db484a460f.png" alt="img"></p> <h5 id="_1-为什么需要版本控制"><a href="#_1-为什么需要版本控制" class="header-anchor">#</a> 1.为什么需要版本控制？</h5> <p>从个人开发过度到团队协作</p> <p><img src="https://img-blog.csdnimg.cn/img_convert/2bcf55bc8f1e6cda16fc048ed30e12fc.png" alt="img"></p> <h5 id="_2-版本控制工具"><a href="#_2-版本控制工具" class="header-anchor">#</a> 2.版本控制工具</h5> <h6 id="集中式版本控制工具"><a href="#集中式版本控制工具" class="header-anchor">#</a> 集中式版本控制工具</h6> <p>集中化的版本控制系统诸如 CVS、 SVN 等，都有一个单一的集中管理的服务器，保存所有文件的修订版本，而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新。多年以来，这已成为版本控制系统的标准做法。</p> <p>这种做法带来了许多好处，每个人都可以在一定程度上看到项目中的其他人正在做些什么。而管理员也可以轻松掌控每个开发者的权限，并且管理一个集中化的版本控制系统， 要远比在各个客户端上维护本地数据库来得轻松容易。</p> <p>事分两面，有好有坏。这么做显而易见的缺点是中央服务器的单点故障。如果服务器宕机一小时，那么在这一小时内，谁都无法提交更新，也就无法协同工作。</p> <p><img src="https://img-blog.csdnimg.cn/img_convert/f0cc7f6f1eb57316f7f8fce8e2f03f45.png" alt="img"></p> <h6 id="分布式版本控制工具"><a href="#分布式版本控制工具" class="header-anchor">#</a> 分布式版本控制工具</h6> <p>Git、 Mercurial、 Bazaar、 Darcs……</p> <p>像 Git 这种分布式版本控制工具，客户端提取的不是最新版本的文件快照，而是把代码仓库完整地镜像下来（本地库）。这样任何一处协同工作用的文件发生故障，事后都可以用其他客户端的本地仓库进行恢复。因为每个客户端的每一 次文件提取操作，实际上都是一次对整个文件仓库的完整备份。</p> <p><strong>分布式的版本控制系统出现之后,解决了集中式版本控制系统的缺陷：</strong></p> <p>1.服务器断网的情况下也可以进行开发（因为版本控制是在本地进行的）</p> <p>2.每个客户端保存的也都是整个完整的项目（包含历史记录， 更加安全）</p> <h4 id="_2-工作机制和代码托管中心"><a href="#_2-工作机制和代码托管中心" class="header-anchor">#</a> 2.工作机制和代码托管中心</h4> <h5 id="工作机制"><a href="#工作机制" class="header-anchor">#</a> 工作机制</h5> <p><img src="https://img-blog.csdnimg.cn/img_convert/1706b3553447ac9f8d95377d965d4fd2.png" alt="img"></p> <h5 id="代码托管中心"><a href="#代码托管中心" class="header-anchor">#</a> 代码托管中心</h5> <p>局域网</p> <ul><li>GitLab
+互联网</li> <li>GitHub（外网）</li> <li>Gitee 码云（国内网站）</li></ul> <h2 id="_3-git安装"><a href="#_3-git安装" class="header-anchor">#</a> 3.Git安装</h2> <p>在官网下载git的安装包</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318101349437.png" alt="image-20220318101349437"></p> <p>选择安装目录，next</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318101649204.png" alt="image-20220318101649204"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318101847154.png" alt="image-20220318101847154"></p> <p>选择默认编辑器</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318102013147.png" alt="image-20220318102013147"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318102113081.png" alt="image-20220318102113081"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318102318609.png" alt="image-20220318102318609"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318102352043.png" alt="image-20220318102352043"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318102457361.png" alt="image-20220318102457361"></p> <p><strong>总结：一路next</strong></p> <p>查看版本：安装成功</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318103031456.png" alt="image-20220318103031456"></p> <h2 id="_4-git常用命令"><a href="#_4-git常用命令" class="header-anchor">#</a> 4.Git常用命令</h2> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318103224939.png" alt="image-20220318103224939"></p> <p>说明：<strong>签名的作用是区分不同操作者身份</strong>。用户的签名信息在每一个版本的提交信息中能够看到，以此确认本次提交是谁做的。 <strong>Git 首次安装必须设置一下用户签名，否则无法提交代码</strong>。</p> <p><strong>注意</strong>： 这里设置用户签名和将来登录 GitHub（或其他代码托管中心）的账号没有任何关系。</p> <h3 id="_01-设置用户签名"><a href="#_01-设置用户签名" class="header-anchor">#</a> 01.设置用户签名</h3> <p>打开Git Bash</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318103759102.png" alt="image-20220318103759102"></p> <p>验证：在当前用户目录下找到，打开</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318103926647.png" alt="image-20220318103926647"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318103952069.png" alt="image-20220318103952069"></p> <p>无误，则用户签名设置完成</p> <h3 id="_02-初始化本地库-git-init"><a href="#_02-初始化本地库-git-init" class="header-anchor">#</a> 02.初始化本地库：git init</h3> <p>案例：新建一个文件夹，当前目录进入Bash命令界面</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318104713142.png" alt="image-20220318104713142"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318104810443.png" alt="image-20220318104810443"></p> <p>创建了一个名为.git非空隐藏文件夹</p> <h3 id="_03-查看本地库状态-git-status"><a href="#_03-查看本地库状态-git-status" class="header-anchor">#</a> 03.查看本地库状态：git status</h3> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318105043506.png" alt="image-20220318105043506"></p> <p>新增hello.txt</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318105550442.png" alt="image-20220318105550442"></p> <p>查看工作区有hello.txt，但是没有提交到暂存区</p> <h3 id="_04-添加暂存区-git-add-文件名"><a href="#_04-添加暂存区-git-add-文件名" class="header-anchor">#</a> 04.添加暂存区：git add 文件名</h3> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318105753129.png" alt="image-20220318105753129"></p> <p>此时hello.txt已经提交在暂存区，git可以追踪到</p> <h3 id="_05-提交本地库-git-commit-m-日志信息-文件名"><a href="#_05-提交本地库-git-commit-m-日志信息-文件名" class="header-anchor">#</a> 05.提交本地库：git commit -m &quot;日志信息&quot; 文件名</h3> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318111206146.png" alt="image-20220318111206146"></p> <p>再次查看</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318111247664.png" alt="image-20220318111247664"></p> <p>查看日志：</p> <p>git log与git reflog区别</p> <p>git log 命令可以显示所有提交过的版本信息，如果感觉太繁琐，可以加上参数 --pretty=oneline，只会显示版本号和提交时的备注信息。</p> <p>git reflog 可以查看所有分支的所有操作记录（包括已经被删除的 commit 记录和 reset 的操作）。例如，执行 git reset --hard HEAD~1，退回到上一个版本，用git log则是看不出来被删除的commitid，用git reflog则可以看到被删除的commitid，我们就可以买后悔药，恢复到被删除的那个版本</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318111446647.png" alt="image-20220318111446647"></p> <h3 id="_06-修改文件"><a href="#_06-修改文件" class="header-anchor">#</a> 06.修改文件</h3> <p>修改hello.txt内容，<code>git status</code>会提示该文件修改过</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+//修改文件信息
+$ vim hello.txt 
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
+        modified:   hello.txt
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+//添加到缓存区
+$ git add hello.txt
+warning: LF will be replaced by CRLF in hello.txt.
+The file will have its original line endings in your working directory
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)
+        modified:   hello.txt
+
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+//第二次提交
+$ git commit -m &quot;second commit&quot; hello.txt
+warning: LF will be replaced by CRLF in hello.txt.
+The file will have its original line endings in your working directory
+[master 1eb2fb2] second commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git log
+commit 1eb2fb245fbf8d5a28d35fb1072b80befb67e4c2 (HEAD -&gt; master)
+Author: syb &lt;903923381@qq.com&gt;
+Date:   Fri Mar 18 11:22:18 2022 +0800
+
+    second commit
+
+commit 4c9e1f045b47f30f3e84c0a19ee4ac641762db9d
+Author: syb &lt;903923381@qq.com&gt;
+Date:   Fri Mar 18 11:11:30 2022 +0800
+
+    first commit
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br></div></div><h3 id="_07-版本穿梭-git-reset-hard-版本号"><a href="#_07-版本穿梭-git-reset-hard-版本号" class="header-anchor">#</a> 07.版本穿梭：git reset --hard 版本号</h3> <ul><li>git reset --hard 版本号</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code># 首先查看当前的历史记录
+abc@DESKTOP-R85C9HV MINGW64 ~/Desktop/HelloGit (master)
+$ git reflog
+41f776b (HEAD -&gt; master) HEAD@{0}: commit: third commit
+6967bf0 HEAD@{1}: commit: second commit
+b0006bc HEAD@{2}: commit (initial): first commit
+
+# 切换到 b0006bc 版本，也就是第一次提交的版本
+abc@DESKTOP-R85C9HV MINGW64 ~/Desktop/HelloGit (master)
+$ git reset --hard b0006bc
+HEAD is now at b0006bc first commit
+
+# 切换完毕之后再查看历史记录，当前成功切换到了 b0006bc 版本
+abc@DESKTOP-R85C9HV MINGW64 ~/Desktop/HelloGit (master)
+$ git reflog
+b0006bc (HEAD -&gt; master) HEAD@{0}: reset: moving to b0006bc
+41f776b HEAD@{1}: commit: third commit
+6967bf0 HEAD@{2}: commit: second commit
+b0006bc (HEAD -&gt; master) HEAD@{3}: commit (initial): first commit
+
+# 然后查看文件 hello.txt，发现文件内容回到第一版本
+abc@DESKTOP-R85C9HV MINGW64 ~/Desktop/HelloGit (master)
+$ cat hello.txt
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br></div></div><p>当你在切换版本后，再更改文本内容提交：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>abc@DESKTOP-R85C9HV MINGW64 ~/Desktop/HelloGit (master)
+$ vim hello.txt
+
+abc@DESKTOP-R85C9HV MINGW64 ~/Desktop/HelloGit (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
+        modified:   hello.txt
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+
+abc@DESKTOP-R85C9HV MINGW64 ~/Desktop/HelloGit (master)
+$ git add hello.txt
+
+abc@DESKTOP-R85C9HV MINGW64 ~/Desktop/HelloGit (master)
+$ git commit -m &quot;forth commit&quot;
+[master 5f8dbf6] forth commit
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+abc@DESKTOP-R85C9HV MINGW64 ~/Desktop/HelloGit (master)
+$ git reflog
+5f8dbf6 (HEAD -&gt; master) HEAD@{0}: commit: forth commit
+b0006bc HEAD@{1}: reset: moving to b0006bc
+41f776b HEAD@{2}: commit: third commit
+6967bf0 HEAD@{3}: commit: second commit
+b0006bc HEAD@{4}: commit (initial): first commit
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><p>再次切换到第一版本：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>abc@DESKTOP-R85C9HV MINGW64 ~/Desktop/HelloGit (master)
+$ git reset --hard b0006bc
+HEAD is now at b0006bc first commit
+
+abc@DESKTOP-R85C9HV MINGW64 ~/Desktop/HelloGit (master)
+$ git reflog
+b0006bc (HEAD -&gt; master) HEAD@{0}: reset: moving to b0006bc
+5f8dbf6 HEAD@{1}: commit: forth commit
+b0006bc (HEAD -&gt; master) HEAD@{2}: reset: moving to b0006bc
+41f776b HEAD@{3}: commit: third commit
+6967bf0 HEAD@{4}: commit: second commit
+b0006bc (HEAD -&gt; master) HEAD@{5}: commit (initial): first commit
+
+abc@DESKTOP-R85C9HV MINGW64 ~/Desktop/HelloGit (master)
+$ cat hello.txt
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+hello, git!
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><p><strong>Git 切换版本， 底层其实是移动的 HEAD 指针。</strong></p> <h3 id="_08-分支"><a href="#_08-分支" class="header-anchor">#</a> 08.分支</h3> <p><img src="https://img-blog.csdnimg.cn/img_convert/bcad650a512a72097b3391e00ecb8bbe.png" alt="img"></p> <p><strong>什么是分支</strong>
+在版本控制过程中，同时推进多个任务，为每个任务，我们就可以创建每个任务的单独分支。使用分支意味着程序员可以把自己的工作从开发主线上分离开来， 开发自己分支的时候，不会影响主线分支的运行。对于初学者而言，分支可以简单理解为副本，一个分支就是一个单独的副本。（分支底层其实也是指针的引用）
+<img src="https://img-blog.csdnimg.cn/img_convert/f1d0659ed000e9dfa295fc696a58cf74.png" alt="img"></p> <p><strong>分支的好处</strong></p> <p>同时并行推进多个功能开发，提高开发效率。</p> <p>各个分支在开发过程中，如果某一个分支开发失败，不会对其他分支有任何影响。失败的分支删除重新开始即可。</p> <h4 id="分支操作命令"><a href="#分支操作命令" class="header-anchor">#</a> 分支操作命令</h4> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318130351170.png" alt="image-20220318130351170"></p> <h5 id="_1-查看分支-git-branch-v"><a href="#_1-查看分支-git-branch-v" class="header-anchor">#</a> 1.查看分支：git branch -v</h5> <div class="language- line-numbers-mode"><pre class="language-text"><code>erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git branch -v
+* master 1eb2fb2 second commit
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h5 id="_2-创建分支-git-branch-分支名"><a href="#_2-创建分支-git-branch-分支名" class="header-anchor">#</a> 2.创建分支:git branch 分支名</h5> <div class="language- line-numbers-mode"><pre class="language-text"><code>erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+#创建hot+-fix分支
+$  git branch hot-fix
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+#再次查看分支可以看到之前创建的hot-fix分支
+$ git branch -v
+  hot-fix 1eb2fb2 second commit
+* master  1eb2fb2 second commit
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p><strong>刚创建的新的分支，并将主分支master的内容复制了一份</strong>。</p> <h5 id="_3-切换分支-git-checkout-分支名"><a href="#_3-切换分支-git-checkout-分支名" class="header-anchor">#</a> 3.切换分支:git checkout 分支名</h5> <div class="language- line-numbers-mode"><pre class="language-text"><code>erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+#切换hot-fix分支
+$ git checkout hot-fix
+Switched to branch 'hot-fix'
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+#查看分支
+$ git branch -v
+* hot-fix 1eb2fb2 second commit
+  master  1eb2fb2 second commit
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p>切换分支后，在新分支修改文件：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+$ vim hello.txt
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+$ cat hello.txt
+hello Git!22222
+hot fix
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+$ git status
+On branch hot-fix
+Changes not staged for commit:
+  (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
+  (use &quot;git restore &lt;file&gt;...&quot; to discard changes in working directory)
+        modified:   hello.txt
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+$ git add hello.txt
+warning: LF will be replaced by CRLF in hello.txt.
+The file will have its original line endings in your working directory
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+$ git commit -m &quot;hot-fix first commmit&quot;
+[hot-fix 38e0799] hot-fix first commmit
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+$ git reflog
+38e0799 (HEAD -&gt; hot-fix) HEAD@{0}: commit: hot-fix first commmit
+1eb2fb2 (master) HEAD@{1}: checkout: moving from master to hot-fix
+1eb2fb2 (master) HEAD@{2}: reset: moving to 1eb2fb2
+1eb2fb2 (master) HEAD@{3}: reset: moving to 1eb2fb2
+1eb2fb2 (master) HEAD@{4}: commit: second commit
+4c9e1f0 HEAD@{5}: commit (initial): first commit
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+$ git log
+commit 38e07995526da81a660c2711765d9102494a327b (HEAD -&gt; hot-fix)
+Author: syb &lt;903923381@qq.com&gt;
+Date:   Fri Mar 18 14:15:46 2022 +0800
+
+    hot-fix first commmit
+
+commit 1eb2fb245fbf8d5a28d35fb1072b80befb67e4c2 (master)
+Author: syb &lt;903923381@qq.com&gt;
+Date:   Fri Mar 18 11:22:18 2022 +0800
+
+    second commit
+
+commit 4c9e1f045b47f30f3e84c0a19ee4ac641762db9d
+Author: syb &lt;903923381@qq.com&gt;
+Date:   Fri Mar 18 11:11:30 2022 +0800
+
+    first commit
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br></div></div><h5 id="_4-合并分支-正常合并-git-merge-分支名"><a href="#_4-合并分支-正常合并-git-merge-分支名" class="header-anchor">#</a> 4.合并分支(正常合并):git merge 分支名</h5> <p>在 master 分支上合并 hot-fix 分支（将hot-fix的合并到master）。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code># 首先要切换到master分支上
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+$ git checkout master
+Switched to branch 'master'
+
+#将hot-fix的合并到master
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git merge hot-fix
+Updating 1eb2fb2..38e0799
+Fast-forward
+ hello.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+#合并后，可以在master分支上看到hot-fix上分支对文件的修改
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ cat hello.txt
+hello Git!22222
+hot fix
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+
+#合并后，hot-fix分支依然存在，并未消失
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git branch -v
+  hot-fix 38e0799 hot-fix first commmit
+* master  38e0799 hot-fix first commmit
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git branch hot-fix
+fatal: a branch named 'hot-fix' already exists
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br></div></div><h5 id="_5-冲突合并"><a href="#_5-冲突合并" class="header-anchor">#</a> 5.冲突合并：</h5> <p><strong>冲突产生的原因</strong></p> <p>并分支时，两个分支在同一个文件的同一个位置有两套完全不同的修改。 Git 无法替我们决定使用哪一个，因此，必须<strong>人为决定</strong>新代码内容。</p> <p><strong>产生冲突</strong></p> <p>首先，在master修改文件hello.txt最后修改内容，并提交：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ vim hello.txt
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ cat hello.txt
+hello Git!22222
+hot fix
+master test
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p>提交至本地库区：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#提交至暂存区
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git add hello.txt
+
+#提交至本地库
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git commit -m &quot;master test&quot; hello.txt
+[master 3288538] master test
+ 1 file changed, 1 insertion(+)
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>然后，在hot-fix修改文件hello.txt最后一行内容，并提交：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#切换至hot-fix
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+$ vim hello.txt
+
+#查看修改
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+$ cat hello.txt
+hello Git!22222
+hot fix
+hot fix test
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+
+#提交暂存区
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+$ git add hello.txt
+
+
+#提交本地库
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+$ git commit -m &quot;hot fix test&quot; hello.txt
+[hot-fix 0dad068] hot fix test
+ 1 file changed, 1 insertion(+)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br></div></div><p>切换到master分支，然后将hot-fix分支的合并到master，冲突产生：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>#切换分支
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+$ git checkout master
+Switched to branch 'master'
+
+#冲突产生 代码合并失败
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git merge hot-fix
+Auto-merging hello.txt
+CONFLICT (content): Merge conflict in hello.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+# MERGING 出现，表示有冲突待解决
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run &quot;git commit&quot;)
+  (use &quot;git merge --abort&quot; to abort the merge)
+
+Unmerged paths:
+  (use &quot;git add &lt;file&gt;...&quot; to mark resolution)
+        both modified:   hello.txt
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+
+#查看 &lt;&lt;&lt;当前分支的代码===     ===要合并的代码&gt;&gt;&gt;
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master|MERGING)
+$ cat hello.txt
+hello Git!22222
+hot fix
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+master test
+=======
+hot fix test
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; hot-fix
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br></div></div><p><strong>解决冲突</strong></p> <p>编辑有冲突的文件，<strong>删除特殊符号</strong>，决定要使用的内容</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+当前分支的代码 
+======= 
+合并过来的代码 
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; hot-fix
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>#选择要和合并的代码
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master|MERGING)
+$ vim hello.txt
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master|MERGING)
+$ cat hello.txt
+hello Git!22222
+hot fix
+master test
+hot fix test
+hot-fix
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+
+#提交后才能合并成功
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master|MERGING)
+$ git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run &quot;git commit&quot;)
+  (use &quot;git merge --abort&quot; to abort the merge)
+
+Unmerged paths:
+  (use &quot;git add &lt;file&gt;...&quot; to mark resolution)
+        both modified:   hello.txt
+
+no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)
+
+#提交暂存区
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master|MERGING)
+$ git add hello.txt
+
+#提交本地库 注意此时不能带文件名 否则会爆错
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master|MERGING)
+$ git commit -m &quot;meger test&quot;
+[master 1572ab3] meger test
+
+#查看是否提交成功
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ cat hello.txt
+hello Git!22222
+hot fix
+master test
+hot fix test
+hot-fix
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br></div></div><p>此时只会修改master 的内容 不会修改hot-fix的内容</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git checkout hot-fix
+Switched to branch 'hot-fix'
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+$ cat hello.txt
+hello Git!22222
+hot fix
+hot fix test
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br></div></div><p><img src="http://division-222.gitee.io/typora-user-images/image-20220318145142639.png" alt="image-20220318145142639"></p> <h2 id="_5-git团队协作机制"><a href="#_5-git团队协作机制" class="header-anchor">#</a> 5.Git团队协作机制</h2> <h3 id="团队内协作"><a href="#团队内协作" class="header-anchor">#</a> 团队内协作</h3> <p><img src="https://img-blog.csdnimg.cn/img_convert/c397bde00d728c4e41eca79f578d25c3.png" alt="img"></p> <h3 id="跨团队协作"><a href="#跨团队协作" class="header-anchor">#</a> 跨团队协作</h3> <p><img src="https://img-blog.csdnimg.cn/img_convert/e3069f865cc2d9760801b7a06c9d213b.png" alt="img"></p> <h2 id="_6-github操作"><a href="#_6-github操作" class="header-anchor">#</a> 6.GitHub操作</h2> <p>官网：<a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub: Where the world builds software · GitHub<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <p>创建远程仓库</p> <p>1.登录：</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318151236045.png" alt="image-20220318151236045"></p> <p>登陆后点击右上角+号，选择new respository创建远程库</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318151627074.png" alt="image-20220318151627074"></p> <p>生成远程库链接</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318152040372.png" alt="image-20220318152040372"></p> <p><strong>远程仓库操作</strong></p> <table><thead><tr><th>命令名称</th> <th>作用</th></tr></thead> <tbody><tr><td>git remote -v</td> <td>查看当前所有远程地址别名</td></tr> <tr><td>git remote add 别名 远程地址</td> <td>起别名</td></tr> <tr><td>git push 别名 分支</td> <td>推送本地分支上的内容到远程仓库</td></tr> <tr><td>git clone 远程地址</td> <td>将远程仓库的内容克隆到本地</td></tr> <tr><td>git pull 远程库地址别名 远程分支名</td> <td>将远程仓库对于分支最新内容拉下来后与 当前本地分支直接合并</td></tr></tbody></table> <h3 id="_1-创建远程库别名"><a href="#_1-创建远程库别名" class="header-anchor">#</a> 1.创建远程库别名：</h3> <ul><li>git remote -v ：	查看当前所有远程地址别名</li> <li>git remote add 别名 远程地址 ：起别名</li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>#此时没有别名
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+$ git remote -v
+
+#创建别名
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+$ git remote add gitdemo https://github.com/peacelovea/gitdemo.git
+
+#创建别名成功
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+$ git remote -v
+gitdemo https://github.com/peacelovea/gitdemo.git (fetch)
+gitdemo https://github.com/peacelovea/gitdemo.git (push)
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h3 id="_2-推送本地库到远程仓库"><a href="#_2-推送本地库到远程仓库" class="header-anchor">#</a> 2.推送本地库到远程仓库</h3> <p><strong>基本语法：git push 别名 分支</strong></p> <p>将master分支推送到远程仓库:</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (hot-fix)
+$ git checkout master
+Switched to branch 'master'
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ cat hello.txt
+hello Git!22222
+hot fix
+master test
+hot fix test
+hot-fix
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+
+#网络可能失败
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git push gitdemo master
+fatal: unable to access 'https://github.com/peacelovea/gitdemo.git/': Failed to connect to github.com port 443 after 21082 ms: Timed out
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><p>弹出github登录框</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318153235890.png" alt="image-20220318153235890"></p> <p>我这里选择第二个使用code登录</p> <p>输入完code后</p> <p>!(http://division-222.gitee.io/typora-user-images/image-20220318153359599.png)</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318153508094.png" alt="image-20220318153508094"></p> <p>推送成功</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318154711927.png" alt="image-20220318154711927"></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git push gitdemo master
+Enumerating objects: 18, done.
+Counting objects: 100% (18/18), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (18/18), 1.35 KiB | 275.00 KiB/s, done.
+Total 18 (delta 5), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (5/5), done.
+To https://github.com/peacelovea/gitdemo.git
+ * [new branch]      master -&gt; master
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p>刷新github后，可以在远程库看到本地库的代码</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318154823409.png" alt="image-20220318154823409"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318154859748.png" alt="image-20220318154859748"></p> <h3 id="_3-远程库拉取到本地库"><a href="#_3-远程库拉取到本地库" class="header-anchor">#</a> 3.远程库拉取到本地库</h3> <p><strong>基本语法：<code>git pull 别名 分支</code></strong></p> <p>在Github（远程库）上修改hello.txt文件，并提交。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318155743409.png" alt="image-20220318155743409"></p> <p>拉去代码到本地库：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git pull gitdemo master
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 690 bytes | 32.00 KiB/s, done.
+From https://github.com/peacelovea/gitdemo
+ * branch            master     -&gt; FETCH_HEAD
+   1572ab3..e61407f  master     -&gt; gitdemo/master
+Updating 1572ab3..e61407f
+Fast-forward
+ hello.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+# 和Github代码一致
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ cat hello.txt
+hello Git!22222
+hot fix
+master test
+hot fix test
+hot-fix
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+Edit from Github first commit
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br></div></div><h3 id="_4-克隆远程库到本地"><a href="#_4-克隆远程库到本地" class="header-anchor">#</a> 4.克隆远程库到本地</h3> <p><strong>基本语法：<code>git clone 远程地址</code></strong></p> <p>创建一个新文件夹</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318160610499.png" alt="image-20220318160610499"></p> <p>在远程库获取地址URL</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318160650147.png" alt="image-20220318160650147"></p> <p>注意：在gitClone目录打开Bash命令</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318160908353.png" alt="image-20220318160908353"></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitClone
+$  git clone https://github.com/peacelovea/gitdemo.git
+Cloning into 'gitdemo'...
+remote: Enumerating objects: 21, done.
+remote: Counting objects: 100% (21/21), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 21 (delta 6), reused 17 (delta 5), pack-reused 0
+Receiving objects: 100% (21/21), done.
+Resolving deltas: 100% (6/6), done.
+
+#进入到gitdemo
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitClone
+$ cd gitdemo
+
+#查看别名 
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitClone/gitdemo (master)
+$ git remote -v
+origin  https://github.com/peacelovea/gitdemo.git (fetch)
+origin  https://github.com/peacelovea/gitdemo.git (push)
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>克隆成功</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318161110757.png" alt="image-20220318161110757"></p> <p><strong>clone 会做如下操作：</strong></p> <ol><li>拉取代码。</li> <li>初始化本地仓库。</li> <li>创建别名。</li></ol> <h3 id="_5-github-团队内协作"><a href="#_5-github-团队内协作" class="header-anchor">#</a> 5.GitHub_团队内协作</h3> <p>一、选择邀请团队成员。（在仓库设置里操作）</p> <p><img src="https://img-blog.csdnimg.cn/img_convert/945f1ba6e29fb725ee0d852ff59c3851.png" alt="img"></p> <p>二、填入成员账号，将成员添加到仓库。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318161907796.png" alt="image-20220318161907796"></p> <p>三、复制邀请函（链接）发送给成员 ，如：https://github.com/atguiguyueyue/git-shTest/invitations。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318162025328.png" alt="image-20220318162025328"></p> <p>四、成员登陆账号在github，在浏览器复制链接，点击接受邀请。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318162038814.png" alt="image-20220318162038814"></p> <p>五、成员邀请成功之后，可以在Github账号上看到将来共同开发远程仓库。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318162502492.png" alt="image-20220318162502492"></p> <p>六、目标合作者可以修改内容并 push 到远程仓库。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code># 编辑 clone 下来的文件
+Layne@LAPTOP-Layne MINGW64 /d/Git-Space/pro-linghuchong/git-shTest(master)
+$ vim hello.txt
+Layne@LAPTOP-Layne MINGW64 /d/Git-Space/pro-linghuchong/git-shTest(master)
+$ cat hello.txt
+hello git! hello atguigu! 2222222222222
+hello git! hello atguigu! 33333333333333
+hello git! hello atguigu!
+hello git! hello atguigu!
+hello git! hello atguigu! 我是最帅的， 比岳不群还帅
+hello git! hello atguigu!
+hello git! hello atguigu!
+hello git! hello atguigu!
+hello git! hello atguigu!
+hello git! hello atguigu!
+hello git! hello atguigu!
+hello git! hello atguigu!
+hello git! hello atguigu!
+hello git! hello atguigu!
+hello git! hello atguigu! master test
+hello git! hello atguigu! hot-fix test
+
+# 将编辑好的文件添加到暂存区
+Layne@LAPTOP-Layne MINGW64 /d/Git-Space/pro-linghuchong/git-shTest(master)
+$ git add hello.txt
+
+# 将暂存区的文件上传到本地库
+Layne@LAPTOP-Layne MINGW64 /d/Git-Space/pro-linghuchong/git-shTest(master)
+$ git commit -m &quot;lhc commit&quot; hello.txt
+[master 5dabe6b] lhc commit
+1 file changed, 1 insertion(+), 1 deletion(-)
+
+# 将本地库的内容 push 到远程仓库
+Layne@LAPTOP-Layne MINGW64 /d/Git-Space/pro-linghuchong/git-shTest
+(master)
+$ git push origin master
+Logon failed, use ctrl+c to cancel basic credential prompt.
+Username for 'https://github.com': atguigulinghuchong
+Counting objects: 3, done.
+Delta compression using up to 12 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 309 bytes | 309.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/atguiguyueyue/git-shTest.git
+7cb4d02..5dabe6b master -&gt; master
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br></div></div><p>七.回到发送合作邀请者的 GitHub 远程仓库中可以看到，最后一次是目标合作者提交的。</p> <h3 id="_6-github-跨团队协作"><a href="#_6-github-跨团队协作" class="header-anchor">#</a> 6.GitHub_跨团队协作</h3> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318163133154.png" alt="image-20220318163133154"></p> <p>一、将远程仓库的地址复制发给邀请跨团队协作的人，比如东方不败。</p> <p>或者直接搜索项目名称</p> <p>二、在东方不败的 GitHub 账号里的地址栏复制收到的链接，然后点击 网页右上方的Fork按钮，将项目叉到自己的本地仓库</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318163616646.png" alt="image-20220318163616646"></p> <p>叉成功后可以看到当前仓库信息。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318163653039.png" alt="image-20220318163653039"></p> <p>三、东方不败就可以在线编辑叉取过来的文件。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318163712915.png" alt="image-20220318163712915"></p> <p>四、编辑完毕后，填写描述信息并点击左下角绿色按钮提交。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318163745332.png" alt="image-20220318163745332"></p> <p>五、接下来点击上方的 Pull 请求，并创建一个新的请求。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318163820667.png" alt="image-20220318163820667"></p> <p>六、回到岳岳 GitHub 账号可以看到有一个 Pull request 请求。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318163831641.png" alt="image-20220318163831641"></p> <p>进入到聊天室，可以讨论代码相关内容。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318164037405.png" alt="image-20220318164037405"></p> <p>七、如果代码没有问题，可以点击 Merge pull reque 合并代码。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318164133822.png" alt="image-20220318164133822"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318164217501.png" alt="image-20220318164217501"></p> <h3 id="_7-github-ssh免密登录"><a href="#_7-github-ssh免密登录" class="header-anchor">#</a> 7.GitHub_SSH免密登录</h3> <p>远程仓库中还有一个 SSH 的地址，因此我们也可以使用 SSH 进行访问。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318164936131.png" alt="image-20220318164936131"></p> <p>这里提示没有ssh密钥</p> <p>先到用户的主页目录，删除.ssh文件夹（如果没有.ssh文件夹，忽略此步）</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318165128427.png" alt="image-20220318165128427"></p> <p>打开Git Bash，运行命令ssh-keygen生成.ssh目录 敲三次回车：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>
+erhang@DESKTOP-PNIJAHF MINGW64 ~
+$ ssh-keygen -t rsa -C 903923381.com
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/erhang/.ssh/id_rsa):
+Created directory '/c/Users/erhang/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/erhang/.ssh/id_rsa
+Your public key has been saved in /c/Users/erhang/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:LQYvHWgJbX4eVTENqajs+kCteJHAr83I9j5VUloj4VM 903923381.com
+The key's randomart image is:
++---[RSA 3072]----+
+|    ....E  .==   |
+| .   o+++ . ...  |
+|  o  oB=.+ .     |
+|   o ++==o.      |
+|    =.o*S..      |
+| . B o+o..       |
+|  * *o           |
+| . o...          |
+|   .++.          |
++----[SHA256]-----+
+
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><p>重新生成了.ssh目录</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318165615871.png" alt="image-20220318165615871"></p> <p>查看公钥</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>erhang@DESKTOP-PNIJAHF MINGW64 ~
+$ cd .ssh
+
+erhang@DESKTOP-PNIJAHF MINGW64 ~/.ssh
+$ cat id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDBTt4LpduVQ4GUfzAtWYCfhyZ0bxPSWU/ZyVWKR/LdfAsbCNp2NwyKCU//E7gUOHyTNQG6H489DfpTSFKGER2fEFeWVOZQR8u7XyCsoUrLEMw0HFP91xXGgjOgsvmdT1lBnFui+QmvboZT16+A2W+GBVL5LxKw+skr3eO/V9EWppMaW7Lw+2yCIXXmSKhBHZmpz+gHjk3U5kmZj/U3M8yqPB6JHfMUcdFx20UJpTE10vrcM4wKYT1cSMNafOysN+5RmNY1U1PdV3n0dhn9k481YTe8zOJxe7ehFgE81NVXtddjPwjVXPufThcwrLbUtf815FE3NIx+FYJgiKHoizdfqSrAqYoF7tMPSGNrMccw21Z0IEfFqzFOvEJrFLmk4sIjAqfPwQL0UmAKAM/3a4lCIfiEaAVlFuBD2YCmcAzlF+rJ34vmlsge44+m2Ql/8v7Q5bUHxW1MlR6RKKta/s8X8yVI9TuxyjHUR/o045pjkprp5wJy6C5OSsu/uFnsFLk= 903923381.com
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>将生成的公钥添加至Github账号SSH设置</p> <p>打开setting/SSH and GPG keys</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318165945399.png" alt="image-20220318165945399"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318170142278.png" alt="image-20220318170142278"></p> <p>添加成功</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318170209469.png" alt="image-20220318170209469"></p> <p>添加公钥后，可不用输入Github账号密码便可推送。</p> <p>接下来通过SSH方式提交hello.txt。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318170728042.png" alt="image-20220318170728042"></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ cat hello.txt
+hello Git!22222
+hot fix
+master test
+hot fix test
+hot-fix
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+hello Git!
+Edit from Github first commit
+
+#修改本地仓
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ vim hello.txt
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git add hello.txt
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use &quot;git restore --staged &lt;file&gt;...&quot; to unstage)
+        modified:   hello.txt
+
+
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git commit -m &quot;ssh test&quot;
+[master 81efd31] ssh test
+ 1 file changed, 1 insertion(+)
+
+# 通过SSH推送
+erhang@DESKTOP-PNIJAHF MINGW64 /d/tool/Git/GitSpace/gitdemo (master)
+$ git push git@github.com:peacelovea/gitdemo.git
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 270 bytes | 270.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:peacelovea/gitdemo.git
+   e61407f..81efd31  master -&gt; master
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br></div></div><p>推送成功。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220318172539922.png" alt="image-20220318172539922"></p> <h2 id="_7-idea集成git"><a href="#_7-idea集成git" class="header-anchor">#</a> 7.IDEA集成Git</h2> <p><strong>环境准备</strong></p> <h3 id="_1-配置-git-忽略文件"><a href="#_1-配置-git-忽略文件" class="header-anchor">#</a> 1.配置 Git 忽略文件</h3> <p>如：</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319101949593.png" alt="image-20220319101949593"></p> <p><strong>为什么忽略：</strong></p> <p>一般我们只希望保存pom文件和代码，这些文件与项目的实际功能无关，不参与服务器上部署运行。把它们忽略掉能够屏蔽 IDE 工具之间的差异。例如，Maven工程根据src生成的target。</p> <p><strong>怎么忽略：</strong></p> <p>1.创建忽略文件XXXX.ignore(前缀名随便起，建议是git.ignore)，这个文件的存放位置原则上哪里都可以，为了便于~/.gitconfig文件引用，建议也放在用户家目录下</p> <p><strong>git.ignore 文件模版内容如下：</strong></p> <div class="language- line-numbers-mode"><pre class="language-text"><code># Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+.classpath
+.project
+.settings
+target
+.idea
+*.iml
+
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><p><img src="http://division-222.gitee.io/typora-user-images/image-20220319102957091.png" alt="image-20220319102957091"></p> <p>将文件模板复制到git.ignore后</p> <p>在.gitconfig 文件中引用忽略配置文件（此文件也在 Windows 的家目录中）</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319103334621.png" alt="image-20220319103334621"></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>[user]
+	name = syb
+	email = 903923381@qq.com
+[core]
+	excludesfile = C:/Users/erhang/git.ignore
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>注意：这里要使用“正斜线（/）”，不要使用“反斜线（\）”</p> <h3 id="_2-idea中定位git程序"><a href="#_2-idea中定位git程序" class="header-anchor">#</a> 2.idea中定位Git程序</h3> <p>打开设置</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319103644746.png" alt="image-20220319103644746"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319103748479.png" alt="image-20220319103748479"></p> <p>选中bin/git.exe</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319103833967.png" alt="image-20220319103833967"></p> <p>点击右上角test，弹出git的版本，保存配置，定位成功</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319103926614.png" alt="image-20220319103926614"></p> <h3 id="_3-初始化git"><a href="#_3-初始化git" class="header-anchor">#</a> 3.初始化Git</h3> <p>点击导航栏VCS，选择create git repository</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319104305079.png" alt="image-20220319104305079"></p> <p>选中项目的根目录（默认就选中了），点击ok</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319104528370.png" alt="image-20220319104528370"></p> <p>可以看到项目根目录出现了.git文件</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319104708235.png" alt="image-20220319104708235"></p> <p>同时项目颜色变成了红色(git红色表示文件未被追踪，即文件还没被添加到暂存区)</p> <h3 id="_4-添加到暂存区"><a href="#_4-添加到暂存区" class="header-anchor">#</a> 4.添加到暂存区</h3> <p>这里我创建一个名叫HelloGit的Maven工程。重复3的操作</p> <p>创建一个HelloGit类，将其添加Git暂存区。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319105628287.png" alt="image-20220319105628287"></p> <p>创建完类后idea会自动提醒是否添加暂存区。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319105655153.png" alt="image-20220319105655153"></p> <p>点击add，该类变绿色（绿色说明添加到了暂存区，还没有添加到本地库）</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319105744666.png" alt="image-20220319105744666"></p> <p>也可以右键单击文件，Git-&gt;add，手动添加</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319105833505.png" alt="image-20220319105833505"></p> <p>也可以将这整个项目一次性add，右键单击文件根目录，手动add</p> <h3 id="_5-提交本地库"><a href="#_5-提交本地库" class="header-anchor">#</a> 5.提交本地库</h3> <p>右键单击项目根目录，选择Git-&gt;Commit Directory。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319110216535.png" alt="image-20220319110216535"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319110525633.png" alt="image-20220319110525633"></p> <p>添加成功，控制待打印信息</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319113506630.png" alt="image-20220319113506630"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319113512626.png" alt="image-20220319113512626"></p> <p>被提交的类变为正常的黑色</p> <p><img src="C:/Users/erhang/AppData/Roaming/Typora/typora-user-images/image-20220323165800722.png" alt="image-20220323165800722"></p> <h3 id="_6-切换版本"><a href="#_6-切换版本" class="header-anchor">#</a> 6.切换版本</h3> <p>修改一行代码</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319113734737.png" alt="image-20220319113734737"></p> <p>此时被修改的文件变蓝，蓝色说明被追踪过但是又被修改了</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319113803676.png" alt="image-20220319113803676"></p> <p>我们要重新add，commit，可以看到代码的不同</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319114319221.png" alt="image-20220319114319221"></p> <p>再添加第三个版本，</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319114458239.png" alt="image-20220319114458239"></p> <p>因为已经被被追踪过，这里我们可以直接commit</p> <p>此时有三个版本了</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319120010598.png" alt="image-20220319120010598"></p> <p>可以看到修改信息<img src="http://division-222.gitee.io/typora-user-images/image-20220319120049722.png" alt="image-20220319120049722"></p> <p>切换版本：</p> <p>右键选择要切换的版本，然后在菜单里点击 Checkout Revision。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319115219155.png" alt="image-20220319115219155"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319115234728.png" alt="image-20220319115234728"></p> <p>此时头指针指向第二版本，文件也变为第二版本的文件</p> <h3 id="_7-创建分支"><a href="#_7-创建分支" class="header-anchor">#</a> 7.创建分支</h3> <p>右键点击HelloGit，Git  -&gt; Branches，或者点击IDEA的右下角，点击New Branche：</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319120454446.png" alt="image-20220319120454446"></p> <p>或：</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319120436392.png" alt="image-20220319120436392"></p> <p>弹出框，输入分支名：</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319120707520.png" alt="image-20220319120707520"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319120736968.png" alt="image-20220319120736968"></p> <h3 id="_8-切换分支"><a href="#_8-切换分支" class="header-anchor">#</a> 8.切换分支</h3> <p>点击右下角分支选择checkout，可以切换分支</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319120848789.png" alt="image-20220319120848789"></p> <p>或者在log窗口，右键点击分支，选择checkout：</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319121101576.png" alt="image-20220319121101576"></p> <h3 id="_9-合并分支-正常合并"><a href="#_9-合并分支-正常合并" class="header-anchor">#</a> 9.合并分支（正常合并）</h3> <p>在hot-fix分支修改类并commit提交：</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319121327295.png" alt="image-20220319121327295"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319121355971.png" alt="image-20220319121355971"></p> <p>切换到master分支</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319121506010.png" alt="image-20220319121506010"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319121733540.png" alt="image-20220319121733540"></p> <p>我们要将hot-fix分支合并到master分支：</p> <p>点击右下角master，选择hot-fix分支，选择Merge into Current</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319121838288.png" alt="image-20220319121838288"></p> <p>如果代码没有冲突， 分支直接合并成功，分支合并成功以后，代码自动提交，无需手动提交本地库。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319122236492.png" alt="image-20220319122236492"></p> <h3 id="_10-合并分支-冲突合并"><a href="#_10-合并分支-冲突合并" class="header-anchor">#</a> 10.合并分支(冲突合并)</h3> <p>分别在master，hot-fix分支修改HelloGit类同一行，并提交，故意制作冲突：</p> <p>此时两分支代码是一样的，我们切换到hot-fix分支，修改一行代码</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319123225794.png" alt="image-20220319123225794"></p> <p>提交，</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319123319407.png" alt="image-20220319123319407"></p> <p>提交成功后，切换到master分支，修改同样位置代码</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319123527040.png" alt="image-20220319123527040"></p> <p>提交</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319123556456.png" alt="image-20220319123556456"></p> <p>这里我不小心创建了两个</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319124826411.png" alt="image-20220319124826411"></p> <p>在master分支上合并hot-fix分支</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319124930670.png" alt="image-20220319124930670"></p> <p>点击Merge into Current，弹出冲突框，点击Merge手动合并</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319125021515.png" alt="image-20220319125021515"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319125411716.png" alt="image-20220319125411716"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319125457139.png" alt="image-20220319125457139"></p> <p>点击apply，合并成功，自动提交本地库</p> <p>查看日志信息，可以看到hot-fix-commit-2和master commit-2合并成了一个版本</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319125545950.png" alt="image-20220319125545950"></p> <h2 id="idea集成github"><a href="#idea集成github" class="header-anchor">#</a> IDEA集成GitHub</h2> <h3 id="_1-设置github账号"><a href="#_1-设置github账号" class="header-anchor">#</a> 1.设置GitHub账号</h3> <p>在菜单栏File-&gt;Setting-&gt;搜索栏搜GitHub，添加GitHub账号：</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319141247624.png" alt="image-20220319141247624"></p> <p>弹出网页，授权即可</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319141239228.png" alt="image-20220319141239228"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319141622062.png" alt="image-20220319141622062"></p> <h3 id="_2-分享项目到github"><a href="#_2-分享项目到github" class="header-anchor">#</a> 2.分享项目到GitHub</h3> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319142232235.png" alt="image-20220319142232235"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319142529769.png" alt="image-20220319142529769"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319142618862.png" alt="image-20220319142618862"></p> <p>在github主页可以看到项目</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319142942442.png" alt="image-20220319142942442"></p> <p>点击History可以看到本地库对应的版本</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319143058603.png" alt="image-20220319143058603"></p> <h3 id="_3-push推送代码到远程库"><a href="#_3-push推送代码到远程库" class="header-anchor">#</a> 3.push推送代码到远程库</h3> <p><strong>注意： push 是将本地库代码推送到远程库，如果本地库代码跟远程库代码版本不一致，
+push 的操作是会被拒绝的。也就是说， 要想 push 成功，一定要保证本地库的版本要比远程库的版本高！ 因此一个成熟的程序员在动手改本地代码之前，一定会先检查下远程库跟本地代码的区别！如果本地的代码版本已经落后，切记要先 pull 拉取一下远程库的代码，将本地代码更新到最新以后，然后再修改，提交，推送！</strong></p> <h4 id="https协议push"><a href="#https协议push" class="header-anchor">#</a> https协议push</h4> <p>在app类中新增一行代码push test并提交到本地库</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319143457588.png" alt="image-20220319143457588"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319143445206.png" alt="image-20220319143445206"></p> <p>此时远程库是没有该代码的，点击Git-&gt;push</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319143826402.png" alt="image-20220319143826402"></p> <p>push成功</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319144333468.png" alt="image-20220319144333468"></p> <p>在远程库可以看到新增代码</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319144420169.png" alt="image-20220319144420169"></p> <h4 id="ssh协议push"><a href="#ssh协议push" class="header-anchor">#</a> ssh协议push</h4> <p>如果由于网络问题，无法push，我们之前设置过ssh免密登录，也可以用ssh方式push</p> <p>在远程库HelloGit中，复制ssh链接</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319144633378.png" alt="image-20220319144633378"></p> <p>app类新增代码并提交到本地库</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319144757238.png" alt="image-20220319144757238"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319144825592.png" alt="image-20220319144825592"></p> <p>点击push，选择ssh push commit，点击push</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319145102548.png" alt="image-20220319145102548"></p> <p>push成功</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319145453099.png" alt="image-20220319145453099"></p> <p>回到github主页可以看到代码push成功</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319145913636.png" alt="image-20220319145913636"></p> <p><strong>注意：如果你开的有vpn，https很快就能push，但是ssh会因为网络代理的问题push失败，ssh方式push时把vpn关掉</strong></p> <h3 id="_4-pull拉取远程库到本地库"><a href="#_4-pull拉取远程库到本地库" class="header-anchor">#</a> 4.pull拉取远程库到本地库</h3> <p>我们在远程库即github主页对代码进行更新，并提交</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319150327133.png" alt="image-20220319150327133"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319150359117.png" alt="image-20220319150359117"></p> <p>此时远程库的代码已经比本地库的代码更新了</p> <p><strong>注意： pull 是拉取远端仓库代码到本地，如果远程库代码和本地库代码不一致，会自动
+合并，如果自动合并失败，还会涉及到手动解决冲突的问题，所以在pull时尽量不要改写本地库的代码。</strong></p> <p>右键点击项目，可以将远程仓库的内容 pull 到本地仓库：</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319151124207.png" alt="image-20220319151124207"></p> <p>拉取成功</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319151823729.png" alt="image-20220319151823729"></p> <p><strong>注意：我这里pull fail了好几次，原因是开启了vpn 关掉即可</strong></p> <h3 id="_5-clone远程库代码到本地"><a href="#_5-clone远程库代码到本地" class="header-anchor">#</a> 5.clone远程库代码到本地</h3> <p>我们已经把代码托管到了github上，本地的代码相当于一个备份，这里我直接删除HelloGit项目，利用clone 将代码重新克隆到本地</p> <p>1.删除项目</p> <p>2.重新打开idea</p> <ol start="3"><li></li></ol> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319152313169.png" alt="image-20220319152313169"></p> <p>在GitHub主页上复制HelloGit项目的链接，我这里复制的是ssh链接</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319152525170.png" alt="image-20220319152525170"></p> <p>Clone成功后，项目从远程库重新克隆到了本地</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319152658182.png" alt="image-20220319152658182"></p> <h2 id="gitee-码云"><a href="#gitee-码云" class="header-anchor">#</a> Gitee(码云)</h2> <h3 id="简介"><a href="#简介" class="header-anchor">#</a> 简介</h3> <p>GitHub 服务器在国外， 使用 GitHub 作为项目托管网站，如果网速不好的话，严重影响使用体验，甚至会出现登录不上的情况。针对这个情况， 大家也可以使用国内的项目托管网站-码云。使用方式跟 GitHub 一样，而且它还是一个中文网站，如果你英文不是很好，它是最好的选择。</p> <p>官网：<a href="https://gitee.com/" target="_blank" rel="noopener noreferrer">https://gitee.com<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <h3 id="账号注册登录"><a href="#账号注册登录" class="header-anchor">#</a> 账号注册登录</h3> <p>...</p> <h3 id="创建远程库"><a href="#创建远程库" class="header-anchor">#</a> 创建远程库</h3> <p>跟Github的类似。点击+号-&gt;新建仓库</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319153731867.png" alt="image-20220319153731867"></p> <p>也可以从GitHub与GitLab中导入仓库。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319153828009.png" alt="image-20220319153828009"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319153922565.png" alt="image-20220319153922565"></p> <p>创建成功</p> <h3 id="idea集成gitee"><a href="#idea集成gitee" class="header-anchor">#</a> IDEA集成Gitee</h3> <p>首先，要在IDEA安装Gitee插件。</p> <p>在菜单栏选File-&gt;Settings-&gt;Plugins，搜Gitee。</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319154017983.png" alt="image-20220319154017983"></p> <p>安装插件成功后，重启IDEA。</p> <p>功能跟在IDEA的Github插件，功能类似，如添加Gitee账号等，可参考IDEA的Github插件。</p> <p>连接码云，和之前类似：</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319154251947.png" alt="image-20220319154251947"></p> <h3 id="push推送代码到远程库"><a href="#push推送代码到远程库" class="header-anchor">#</a> push推送代码到远程库</h3> <p>可以将本地项目发布到码云上</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319154644761.png" alt="image-20220319154644761"></p> <p>如果不想点这个，也可以用push推送到码云仓库</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319154857051.png" alt="image-20220319154857051"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319154914059.png" alt="image-20220319154914059"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319155048894.png" alt="image-20220319155048894"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319155140797.png" alt="image-20220319155140797"></p> <p>打开码云主页，可以看到项目成功被push到远程仓</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319155243119.png" alt="image-20220319155243119"></p> <p>演示一下完整过程：</p> <p>本地库新增一行代码</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319155343744.png" alt="image-20220319155343744"></p> <p>提交</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319155427650.png" alt="image-20220319155427650"></p> <p>选择码云的链接push</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319155509606.png" alt="image-20220319155509606"></p> <p>push成功：<img src="http://division-222.gitee.io/typora-user-images/image-20220319155532928.png" alt="image-20220319155532928"></p> <h3 id="pull拉取代码到本地库"><a href="#pull拉取代码到本地库" class="header-anchor">#</a> pull拉取代码到本地库</h3> <p>在gitee上修改项目，并提交</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319155857163.png" alt="image-20220319155857163"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319155955301.png" alt="image-20220319155955301"></p> <p>选自pull按钮，这里要选择码云的路径，不要pull错了</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319160053271.png" alt="image-20220319160053271"></p> <p>pull成功</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319160559393.png" alt="image-20220319160559393"></p> <h3 id="clone远程库代码到本地库"><a href="#clone远程库代码到本地库" class="header-anchor">#</a> clone远程库代码到本地库</h3> <p>1.关闭idea，将项目删除</p> <p>2.重新打开idea</p> <p>3.<img src="http://division-222.gitee.io/typora-user-images/image-20220319160340009.png" alt="image-20220319160340009"></p> <p>选择gitee的项目</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319160404757.png" alt="image-20220319160404757"></p> <p>clone成功</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319160612451.png" alt="image-20220319160612451"></p> <h3 id="码云复制github"><a href="#码云复制github" class="header-anchor">#</a> 码云复制GitHub</h3> <p>Gitee可以把GitHub的项目迁移到Gitee上，迁移后可以进行同步刷新，不再赘述</p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319153828009.png" alt="image-20220319153828009"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319161346230.png" alt="image-20220319161346230"></p> <p><img src="http://division-222.gitee.io/typora-user-images/image-20220319161212426.png" alt="image-20220319161212426"></p></div></div>  <div class="page-edit"><div class="edit-link"><a href="https://github.com/peacelovea/edit/master/docs/《Git》学习笔记/30.学习笔记/10.git学习笔记.md" target="_blank" rel="noopener noreferrer">编辑</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">2022/08/16, 13:58:07</span></div></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/d9e9c6/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">Git工具-重置揭密</div></a> <!----></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/d9e9c6/" class="prev">Git工具-重置揭密</a></span> <!----></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/8006c9/"><div>
+            简单请求和复杂请求
+            <!----></div></a> <span class="date">02-05</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/770640/"><div>
+            浅谈WebSocket
+            <!----></div></a> <span class="date">02-05</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/bf4b7f/"><div>
+            搞懂浏览器缓存机制
+            <!----></div></a> <span class="date">02-05</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><div class="icons"><a href="mailto:903923381@qq.com" title="发邮件" target="_blank" class="iconfont icon-youjian"></a><a href="https://github.com/peacelovea" title="GitHub" target="_blank" class="iconfont icon-github"></a><a href="https://music.163.com/#/playlist?id=755597173" title="听音乐" target="_blank" class="iconfont icon-erji"></a></div> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> <!----></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.9caca965.js" defer></script><script src="/assets/js/2.6af90872.js" defer></script><script src="/assets/js/146.4c8bf4f7.js" defer></script>
+  </body>
+</html>
